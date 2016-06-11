@@ -1,5 +1,30 @@
 <html>
    <head>
+   
+      <style>
+		table {
+		    width:60%;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		}
+		th, td {
+		    padding: 3px;
+		    text-align: left;
+		}
+		table#t01 tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#t01 tr:nth-child(odd) {
+		   background-color:#fff;
+		}
+		table#t01 th	{
+		    background-color: black;
+		    color: white;
+		}	
+	</style>
+   
+   
       <title>Alumnos</title>
 
       <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
@@ -14,21 +39,13 @@
               });
              $http.post("cursos", '{"codigo": "02", "nombre": "IPOO II"}').success( function(response) {
               });
-             $http.post("cursos", '{"codigo": "03", "nombre": "BD I"}').success( function(response) {
-              });
-             $http.post("cursos", '{"codigo": "04", "nombre": "ANA 3"}').success( function(response) {
-              });
-
-             $http.post("alumnos", '{"nombres": "Juan", "apellidoPaterno": "Perez", "promedio" : "12"}').success( function(response) {
-              });
          }
       </script>
    </head>
    <body>
-      <h2>AngularJS Sample Application</h2>
       <div ng-app="" ng-controller="alumnoController">
       	<h3>Alumnos</h3>
-         <table>
+         <table id="t01">
             <tr>
                <th>Nombres</th>
                <th>Apellido Paterno</th>
